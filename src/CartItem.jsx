@@ -91,6 +91,7 @@ class CartItem extends React.Component {
               alt="delete"
               className="action-icons"
               src="https://as1.ftcdn.net/v2/jpg/03/40/32/90/1000_F_340329038_j7H8dA1F0vdbw4ltVYNdZe7b8zv1KWLu.jpg"
+              onClick={() => this.props.onDeleteProduct(this.props.product)}
             />
           </div>
         </div>
