@@ -28,39 +28,39 @@ class CartItem extends React.Component {
   // }
   // End using promises
 
-  increaseQuantity = () => {
-    // console.log('this', this.state);
+  // increaseQuantity = () => {
+  //   // console.log('this', this.state);
 
-    // //   form one to setState
-    // this.setState({
-    //   qty: this.state.qty + 1,
-    // });
+  //   // //   form one to setState
+  //   // this.setState({
+  //   //   qty: this.state.qty + 1,
+  //   // });
 
-    // form  two to setState writing
-    this.setState(
-      (prevState) => {
-        return {
-          qty: prevState.qty + 1,
-        };
-      },
-      //  this is a second callback function and current state where quantity increased
-      () => {
-        console.log('this.state', this.state);
-      }
-    );
-  };
-  decreaseQuantity = () => {
-    console.log('this', this.state);
-    const { qty } = this.state;
-    if (qty === 0) {
-      return;
-    }
-    this.setState((prevState) => {
-      return {
-        qty: prevState.qty - 1,
-      };
-    });
-  };
+  //   // form  two to setState writing
+  //   this.setState(
+  //     (prevState) => {
+  //       return {
+  //         qty: prevState.qty + 1,
+  //       };
+  //     },
+  //     //  this is a second callback function and current state where quantity increased
+  //     () => {
+  //       console.log('this.state', this.state);
+  //     }
+  //   );
+  // };
+  // decreaseQuantity = () => {
+  //   console.log('this', this.state);
+  //   const { qty } = this.state;
+  //   if (qty === 0) {
+  //     return;
+  //   }
+  //   this.setState((prevState) => {
+  //     return {
+  //       qty: prevState.qty - 1,
+  //     };
+  //   });
+  // };
   render() {
     console.log('this.props', this.props);
     const { price, title, qty } = this.props.product;
@@ -85,7 +85,7 @@ class CartItem extends React.Component {
               alt="decrease"
               className="action-icons"
               src="https://as2.ftcdn.net/v2/jpg/02/78/84/57/1000_F_278845758_9xl3srVgd8p4jquxgxugGaHV1e5EOlLO.jpg"
-              onClick={this.decreaseQuantity}
+              onClick={() => this.props.onDecreaseQuantity(this.props.product)}
             />
             <img
               alt="delete"
