@@ -9,7 +9,7 @@ const Navbar = (props) => {
           src="https://img.icons8.com/?size=512&id=59997&format=png"
           alt="cart-icon"
         />
-        <span style={styles.cartCount}>3</span>
+        <span style={styles.cartCount}>{props.count}</span>
       </div>
     </div>
   );
